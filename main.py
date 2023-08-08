@@ -9,10 +9,13 @@ def rgb_to_hex(rgb):
     return "#{:02x}{:02x}{:02x}".format(*rgb)
 
 def panting():
+    t.penup()
+    t.setposition(-100, -100)
+    t.pendown()
     pos = 0
     while pos < 210:
         long = 0
-        t.setposition(0, pos)
+        t.setposition(-100, -100 + pos)
         while long < 210:
             t.pendown()
             t.dot(20, rgb_to_hex(random.choice(colors_list)))
